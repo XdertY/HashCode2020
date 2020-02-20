@@ -62,9 +62,8 @@ public:
                     currLibrary.printLibrary();
                     libraries.push_back(currLibrary);
                     getline(inputFile, currentRow);
-
-
                 }
+
             }
         }
     }
