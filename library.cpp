@@ -37,7 +37,7 @@ std::vector<library> ScoredLibrary(const std::vector<library>& inputLibraries, i
     return scoreLibrary;
 }
 
-void generateSubmission(std::vector<library> scoreLibrary) {
+void generateSubmission(const std::vector<library>& scoreLibrary) {
     std::ofstream submissionsFile("Submission.txt");
     submissionsFile<<scoreLibrary.size()<<'\n';
     for(auto &  lib : scoreLibrary) {
