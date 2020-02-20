@@ -1,0 +1,3 @@
+/Users/Alex 1/Documents/University/HashCode/HashCode2020/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Alex 1/Documents/University/HashCode/HashCode2020/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Alex 1/Documents/University/HashCode/HashCode2020/cmake-build-debug/CMakeFiles/HashCode2020.dir
