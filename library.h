@@ -6,6 +6,7 @@
 #define HASHCODE2020_LIBRARY_H
 
 #include <vector>
+#include <algorithm>
 
 class library {
     public:
@@ -13,9 +14,10 @@ class library {
         unsigned int daysForSignUp;
         unsigned int booksPerDay;
 
-        void SetScore()
+        void SetScore(int DaysForTheProcess)
         {
             // Set Score Function
+            this -> Score = 1;
         }
 
         int getScore()
