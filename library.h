@@ -9,6 +9,8 @@
 #include <vector>
 #include <algorithm>
 
+static int nameCounter = 0;
+
 class library {
     public:
         int name; // id
@@ -19,6 +21,8 @@ class library {
         library() = default;
 
         library(std::vector<unsigned int> books, unsigned int daysForSingUp, unsigned int booksPerDay) {
+            this->name = nameCounter;
+            nameCounter ++;
             this->books = books;
             this->daysForSignUp = daysForSingUp;
             this->booksPerDay = booksPerDay;
@@ -54,7 +58,7 @@ class library {
 };
 
 std::vector<library> SortedLibraries(const std::vector<library>&);
-std::vector<library> ScoredLibrary(const std::vector<library>&, int);
+void ScoredLibrary(const std::vector<library>&, int);
 void generateSubmission(const std::vector<library>&);
 
 
