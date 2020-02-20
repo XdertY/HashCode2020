@@ -38,7 +38,7 @@ void ScoredLibrary(const std::vector<library>& inputLibraries, int days)
 }
 
 void generateSubmission(const std::vector<library>& scoreLibrary) {
-    std::ofstream submissionsFile("Submission.txt");
+    std::ofstream submissionsFile("Submission5.txt");
     submissionsFile<<scoreLibrary.size()<<'\n';
     for(auto &  lib : scoreLibrary) {
         submissionsFile<<lib.name<<" "<<lib.books.size()<<'\n';

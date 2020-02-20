@@ -37,7 +37,7 @@ class library {
             for(int i = 0; i < asd.size(); i++){
                 sum += asd[i];
             }
-            this -> Score = (daysForProcess - daysForSignUp) * booksPerDay*sum;
+            this -> Score = (daysForProcess - daysForSignUp) * booksPerDay; // *sum;
         }
 
         int getScore()
