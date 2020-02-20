@@ -63,6 +63,7 @@ public:
                     libraries.push_back(currLibrary);
                     getline(inputFile, currentRow);
                 }
+                ScoredLibrary(libraries, totalDays);
 
             }
         }

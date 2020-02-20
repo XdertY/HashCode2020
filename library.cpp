@@ -12,7 +12,7 @@ std::vector<library> SortedLibraries(const std::vector<library>& inputLibraries)
     return sortedLibrary;
 }
 
-std::vector<library> ScoredLibrary(const std::vector<library>& inputLibraries, int days)
+void ScoredLibrary(const std::vector<library>& inputLibraries, int days)
 {
     int signUpDays = days;
     auto sortLibrary = SortedLibraries(inputLibraries);
@@ -34,7 +34,7 @@ std::vector<library> ScoredLibrary(const std::vector<library>& inputLibraries, i
         }
         scoreLibrary.push_back(temp_lib);
     }
-    return scoreLibrary;
+   generateSubmission(scoreLibrary);
 }
 
 void generateSubmission(const std::vector<library>& scoreLibrary) {
