@@ -27,7 +27,13 @@ class library {
         void SetScore(int daysForProcess)
         {
             // Set Score Function
-            this -> Score = (daysForProcess - daysForSignUp) * booksPerDay;
+            std::vector<unsigned int> asd = books;
+            std::sort(asd.begin(), asd.end());
+            int sum = 0;
+            for(int i = 0; i < asd.size(); i++){
+                sum += asd[i];
+            }
+            this -> Score = (daysForProcess - daysForSignUp) * booksPerDay*sum;
         }
 
         int getScore()
@@ -46,6 +52,10 @@ class library {
     private:
         int Score;
 };
+
+std::vector<library> SortedLibraries(const std::vector<library>&);
+std::vector<library> ScoredLibrary(const std::vector<library>&, int);
+void generateSubmission(const std::vector<library>&);
 
 
 #endif //HASHCODE2020_LIBRARY_H
