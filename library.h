@@ -54,7 +54,7 @@ class library {
 };
 
 std::vector<library> SortedLibraries(const std::vector<library>&);
-std::vector<library> ScoredLibrary(const std::vector<library>&, int);
+void ScoredLibrary(const std::vector<library>&, int);
 void generateSubmission(const std::vector<library>&);
 
 
