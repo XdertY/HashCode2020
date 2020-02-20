@@ -10,3 +10,11 @@ std::vector<library> SortedLibraries(const std::vector<library>& inputLibraries)
     std::sort(sortedLibrary.begin(), sortedLibrary.end(), [](library a, library b){ return a.getScore() > a.getScore();});
     return sortedLibrary;
 }
+
+std::vector<library> ScoredLibrary(const std::vector<library>& inputLibraries, int Days)
+{
+    auto scoreLibrary = SortedLibraries(inputLibraries);
+    //TODO:
+
+    return scoreLibrary;
+}
