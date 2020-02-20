@@ -8,46 +8,64 @@
 class InputParser {
 public:
     InputParser() {
-        std::fstream inputFile;
-        //std::string inputNames[6];
-        inputFile.open("../a_example.txt");
-        unsigned int currentElement;
-        std::string currentRow;
-        getline(inputFile, currentRow);
-        int totalBooks, totalLibraries, totalDays;
-        totalBooks = currentRow[0] - '0';
-        totalLibraries = currentRow[2] - '0';
-        totalDays = currentRow[4] - '0';
+        std::ifstream inputFiles[6];
+        std::string inputNames[6];
+        inputFiles[0].open("../a_example.txt");
+        inputFiles[1].open("../b_read_on.txt");
+        inputFiles[2].open("../c_incunabula.txt");
+        inputFiles[3].open("../d_tough_choices.txt");
+        inputFiles[4].open("../e_so_many_books.txt");
+        inputFiles[5].open("../f_libraries_of_the_world.txt");
+
+        for (std::ifstream & inputFile : inputFiles) {
+            if (inputFile.is_open()) {
+
+                unsigned int currentElement;
+                std::string currentRow;
+                std::string booksStr, librariesStr, daysStr;
+                std::getline(inputFile, booksStr, ' ');
+                std::getline(inputFile, librariesStr, ' ');
+                std::getline(inputFile, daysStr);
 
 
-        std::vector<unsigned int> books;
-        std::vector<library> libraries;
-        currentRow = "";
-        for(int i = 0 ; i < totalBooks; i++) {
-            inputFile>>currentElement;
-            books.push_back(currentElement);
-            std::cout<<currentElement;
-        }
 
-        getline(inputFile, currentRow);
+                int totalBooks, totalLibraries, totalDays;
+                totalBooks = stoi(booksStr);
+                totalLibraries = stoi(librariesStr);
+                totalDays =  stoi(daysStr);
 
 
-        for(int i = 0 ; i < totalLibraries; i++) {
-            getline(inputFile, currentRow);
-            int booksNumber = currentRow[0] - '0';
-            unsigned int daysForSignUp = currentRow[2] - '0';
-            unsigned int booksPerDay = currentRow[4] - '0';
-            std::vector<unsigned int> bookIds;
-            for(int j = 0 ; j < booksNumber; j++) {
-                inputFile>>currentElement;
-                bookIds.push_back(currentElement);
+                std::vector<unsigned int> books;
+                std::vector<library> libraries;
+                currentRow = "";
+                for (int i = 0; i < totalBooks; i++) {
+                    inputFile >> currentElement;
+                    books.push_back(currentElement);
+                }
+
+                getline(inputFile, currentRow);
+
+
+                for (int i = 0; i < totalLibraries; i++) {
+                    std::getline(inputFile, booksStr, ' ');
+                    std::getline(inputFile, librariesStr, ' ');
+                    std::getline(inputFile, daysStr);
+                    int booksNumber = stoi(booksStr);
+                    unsigned int daysForSignUp = stoi(librariesStr);
+                    unsigned int booksPerDay = stoi(daysStr);
+                    std::vector<unsigned int> bookIds;
+                    for (int j = 0; j < booksNumber; j++) {
+                        inputFile >> currentElement;
+                        bookIds.push_back(currentElement);
+                    }
+                    library currLibrary(bookIds, daysForSignUp, booksPerDay);
+                    currLibrary.printLibrary();
+                    libraries.push_back(currLibrary);
+                    getline(inputFile, currentRow);
+
+
+                }
             }
-            library currLibrary(bookIds, daysForSignUp, booksPerDay);
-            currLibrary.printLibrary();
-            libraries.push_back(currLibrary);
-            getline(inputFile, currentRow);
-
-
         }
     }
 };
