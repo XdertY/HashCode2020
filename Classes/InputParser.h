@@ -10,11 +10,11 @@ public:
     InputParser() {
         std::ifstream inputFiles[6];
         std::string inputNames[6];
-//        inputFiles[0].open("../a_example.txt");
-//        inputFiles[1].open("../b_read_on.txt");
-//        inputFiles[2].open("../c_incunabula.txt");
-//        inputFiles[3].open("../d_tough_choices.txt");
-//        inputFiles[4].open("../e_so_many_books.txt");
+        inputFiles[0].open("../a_example.txt");
+        inputFiles[1].open("../b_read_on.txt");
+        inputFiles[2].open("../c_incunabula.txt");
+        inputFiles[3].open("../d_tough_choices.txt");
+        inputFiles[4].open("../e_so_many_books.txt");
         inputFiles[5].open("../f_libraries_of_the_world.txt");
 
         for (std::ifstream & inputFile : inputFiles) {

@@ -4,6 +4,8 @@
 #include "library.h"
 #include <fstream>
 
+static int counter = 0;
+
 
 std::vector<library> SortedLibraries(const std::vector<library>& inputLibraries)
 {
@@ -38,7 +40,8 @@ void ScoredLibrary(const std::vector<library>& inputLibraries, int days)
 }
 
 void generateSubmission(const std::vector<library>& scoreLibrary) {
-    std::ofstream submissionsFile("Submission5.txt");
+    std::ofstream submissionsFile("Submission" + std::to_string(counter) + ".txt");
+    counter++;
     submissionsFile<<scoreLibrary.size()<<'\n';
     for(auto &  lib : scoreLibrary) {
         submissionsFile<<lib.name<<" "<<lib.books.size()<<'\n';
