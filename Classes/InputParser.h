@@ -44,6 +44,7 @@ public:
             }
             library currLibrary(bookIds, daysForSignUp, booksPerDay);
             currLibrary.printLibrary();
+            libraries.push_back(currLibrary);
             getline(inputFile, currentRow);
 
 
