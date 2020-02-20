@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class library {
     public:
@@ -23,6 +24,7 @@ class library {
         void SetScore()
         {
             // Set Score Function
+            this -> Score = 1;
         }
 
         int getScore()

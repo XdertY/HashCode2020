@@ -3,3 +3,10 @@
 //
 
 #include "library.h"
+
+std::vector<library> SortedLibraries(const std::vector<library>& inputLibraries)
+{
+    auto sortedLibrary = inputLibraries;
+    std::sort(sortedLibrary.begin(), sortedLibrary.end(), [](library a, library b){ return a.getScore() > a.getScore();});
+    return sortedLibrary;
+}
