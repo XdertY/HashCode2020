@@ -11,9 +11,12 @@
 
 class library {
     public:
+        int name; // id
         std::vector<unsigned int> books;
         unsigned int daysForSignUp;
         unsigned int booksPerDay;
+
+        library() = default;
 
         library(std::vector<unsigned int> books, unsigned int daysForSingUp, unsigned int booksPerDay) {
             this->books = books;
@@ -21,10 +24,10 @@ class library {
             this->booksPerDay = booksPerDay;
         }
 
-        void SetScore()
+        void SetScore(int daysForProcess)
         {
             // Set Score Function
-            this -> Score = 1;
+            this -> Score = (daysForProcess - daysForSignUp) * booksPerDay;
         }
 
         int getScore()
