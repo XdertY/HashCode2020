@@ -3,14 +3,14 @@
 
 struct library
 {
-    library()
-    {
-        // enter the scoring function
-    }
-
     std::vector<unsigned int> books;
     unsigned int daysForSignUp;
     unsigned int booksPerDay;
+
+    void SetScore()
+    {
+        // Set Score Function
+    }
 
     int getScore()
     {
